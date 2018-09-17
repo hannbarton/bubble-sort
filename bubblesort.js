@@ -1,13 +1,22 @@
 function bubbleSortNum(array) {
-  return 'cat';
+    let lookArr = [];
+    for (let i = 0; i < array.length - 1; i++) {
+        if (compare(array[i], array[i + 1]) === true) {
+            swap(array[i], array[i + 1])
+        }
+        else {
+
+        }
+    }
+  return sort(array);
 }
 
 function swap(a, b) {
     if (a < b) {
-        return a
+        return [a,b]
     }
     else {
-        compare(arr[0] arr[1])
+        return [b, a]
     }
 }
 
@@ -18,3 +27,6 @@ function compare(a, b) {
         return true;
     }
 }
+
+//if compare is true; then swap
+//

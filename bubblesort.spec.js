@@ -13,6 +13,7 @@ describe('a bubble sort by number function', function(){
     //swapper = does the swapping
     beforeAll(function () {
         spyOn(window, 'swap').and.callThrough();
+        //expect
     });
       it('called the helperfunction called swap', function () {
         bubbleSortNum.swap();
