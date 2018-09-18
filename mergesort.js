@@ -7,29 +7,39 @@ function split(wholeArray) {
 }
 //
 
-function merge(arr1, arr2) {
+function merge(leftArr, rightArr) {
     let sorted = [];
     let left = 0;
     let right = 0;
 
-    while (left < arr1.length && right < arr2.length) {
-        if (arr1[left] < arr2[right]) {
-            sorted.push(arr1[left++])
+    while (left < leftArr.length && right < rightArr.length) {
+        if (leftArr[left] < rightArr[right]) {
+            sorted.push(leftArr[left++])
         }
         else {
-            sorted.push(arr2[right++])
+            sorted.push(rightArr[right++])
         }
     }
+    for (; left < leftArr.length; left++) {
+        sorted.push(leftArr[left])
+    }
+    for (; right < rightArr.length; right++) {
+        sorted.push(rightArr[right])
+    }
+
     return sorted;
 }
 
 function mergeSort(array) {
-    let halfArray = [];
-    if (array.length === 1) return array;
-    if (array.length === 2) {
-        return sort(array[0], array[1]);
+    let splited = split(array);
+
+    if (splited.length === 1) {
+        return array;
+    }
+    if (splited.length === 2) {
+        return merge(array[0], array[1]);
     }
     else {
-        //code
+
     }
 }
